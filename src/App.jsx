@@ -108,34 +108,8 @@ import Plx from "react-plx";
 
 export default function App() {
   return (
-    <div className="relative">
-      {/* Background Layer */}
-      <Plx
-        parallaxData={[
-          {
-            start: 0,
-            end: 800,
-            properties: [
-              {
-                startValue: 1,
-                endValue: 1.2,
-                property: "scale",
-              },
-            ],
-          },
-        ]}
-        style={{
-          position: "fixed",
-          left: 0,
-          top: 0,
-          width: "100%",
-          zIndex: 1, // Lowest layer
-        }}
-      >
-        <img src="background.jpg" alt="Background" className="w-full" />
-      </Plx>
-
-      {/* Middle Layer (Foreground Image) */}
+    <div>
+      {/* Foreground Image (bg.png) */}
       <Plx
         parallaxData={[
           {
@@ -156,23 +130,46 @@ export default function App() {
           left: 0,
           top: 0,
           width: "100%",
-          height: "100vh",
-          objectFit: "cover", // Ensures the image covers the viewport
-          zIndex: 1,
+          zIndex: 100,
         }}
       >
         <img
+          style={{ width: "100%" }}
           src="bg.png"
           alt="Foreground"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover", // Stretch image while maintaining aspect ratio
-          }}
         />
       </Plx>
 
-      {/* Text Layer */}
+      {/* Background Image (background.jpg) */}
+      <Plx
+        parallaxData={[
+          {
+            start: 0,
+            end: 800,
+            properties: [
+              {
+                startValue: 1,
+                endValue: 1.18,
+                property: "scale",
+              },
+            ],
+          },
+        ]}
+        style={{
+          position: "fixed",
+          left: 0,
+          top: 0,
+          width: "100%",
+        }}
+      >
+        <img
+          style={{ width: "100%" }}
+          src="background.jpg"
+          alt="Background"
+        />
+      </Plx>
+
+      {/* Text Image (text-img.webp) */}
       <Plx
         parallaxData={[
           {
@@ -189,27 +186,46 @@ export default function App() {
         ]}
         style={{
           position: "fixed",
-          left: "35%",
-          top: "26vw",
-          width: "30vw",
-          zIndex: 3, // Topmost layer
+          top: "26vw", // Maintain vertical alignment
+          left: 0,
+          width: "100%", // Ensure it spans full width for flex centering
+          display: "flex", // Use flexbox to center content
+          justifyContent: "center", // Horizontal centering
+          alignItems: "center", // Vertical centering (optional if needed)
+          zIndex: 150, // Keep it above background layers
+          pointerEvents: "none", // Prevent interference with clicks
         }}
       >
-        <img src="text-img.webp" alt="Cyberpunk Text" />
+        <img
+          style={{
+            width: "30vw", // Keep the desired width
+            pointerEvents: "none", // Prevent interference
+          }}
+          src="/text-img.webp"
+          alt="Cyberpunk Text"
+        />
       </Plx>
 
-      {/* Black Overlay Background */}
-      <div
-        className="absolute top-0 left-0 w-full"
-        style={{ height: "400vh", zIndex: 0 }}
-      >
-        <div className="bg-black h-full"></div>
-      </div>
 
-      {/* Content Section */}
-      <div className="relative z-10 text-center text-cyan-400 mt-[80vh]">
-        <h1 className="text-6xl font-bold">Welcome to My Cyberpunk Portfolio</h1>
-        <p className="text-2xl mt-10">Scroll to explore my projects.</p>
+
+      {/* Black Background Overlay */}
+      <div
+        style={{
+          position: "fixed",
+          left: 0,
+          top: 0,
+          zIndex: 200,
+          paddingTop: "56%",
+          height: "400vh",
+          width: "100%",
+        }}
+      >
+        <div
+          style={{
+            background: "#000",
+            height: "100%",
+          }}
+        ></div>
       </div>
     </div>
   );
