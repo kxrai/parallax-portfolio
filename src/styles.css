@@ -48,8 +48,8 @@ img[src="/text-img.webp"] {
   }
 
   img[src="bg.png"] {
-    transform: scale(1.3) translateX(5%); /* Slight zoom and shift right */
-    object-fit: cover;
+    transform: scale(3.5) translateY(35%) translateX(2%); /* Zoom in and shift down */
+    object-fit: cover; /* Ensure it fills the viewport */
   }
 
   /* Cyberpunk Text - Larger and Centered */
