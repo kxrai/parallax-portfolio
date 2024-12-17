@@ -8,7 +8,7 @@ export default function App() {
         parallaxData={[
           {
             start: 0,
-            end: 700,
+            end: 1200, // change this value to increase scroll for zoom effect
             easing: "ease-in",
             properties: [
               { startValue: 1, endValue: 1.6, property: "scale" }
