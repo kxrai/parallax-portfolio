@@ -1,0 +1,67 @@
+/* Sun Portal Container */
+.sun-portal {
+    position: fixed;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, #ffea00, #ff8c00); /* Sun-like gradient */
+    border-radius: 50%; /* Circle */
+    box-shadow: 0 0 30px #ffea00, 0 0 60px #ff8c00; /* Glow effect */
+    z-index: 9999;
+  }
+  
+  /* Navigation Links Static Around the Portal */
+  .orbit {
+    list-style: none;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .orbit li {
+    position: absolute;
+    color: #fff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; /* Cyberpunk-style glow */
+  }
+  
+  .orbit li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .orbit li a:hover {
+    color: #ffea00;
+    text-shadow: 0 0 10px #ffea00, 0 0 20px #ffea00; /* Hover effect */
+  }
+  
+  /* Position Links Statistically Around the Portal */
+  .orbit li:nth-child(1) {
+    top: -60px; /* Top position */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .orbit li:nth-child(2) {
+    bottom: -60px; /* Bottom position */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .orbit li:nth-child(3) {
+    left: -120px; /* Left position */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .orbit li:nth-child(4) {
+    right: -120px; /* Right position */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
