@@ -40,6 +40,11 @@ const Navbar = () => {
             <span className="fa fa-twitter"></span>
           </a>
         </li>
+        <li className="menu-item">
+          <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+            <span className="fa fa-google"></span>
+          </a>
+        </li>
       </ul>
 
       {/* Static Content Below Menu */}
