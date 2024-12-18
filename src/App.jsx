@@ -13,7 +13,7 @@ export default function App() {
       console.log("Scroll Position:", scrollPosition); // Log scroll position to debug
 
       // Show Navbars when scroll position >= 600
-      if (scrollPosition >= 600) {
+      if (scrollPosition >= 800) {
         setShowNavbars(true);
       } else {
         setShowNavbars(false);
