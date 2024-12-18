@@ -1,42 +1,55 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 
 const Navbar = () => {
-  console.log("Navbar loaded!"); // Debug log
-  const [showPortal, setShowPortal] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  // Scroll trigger to show the portal
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      console.log("Scroll position:", scrollPosition); // Debug scroll position
-      if (scrollPosition > 500) {
-        setShowPortal(true);
-      } else {
-        setShowPortal(false);
-      }
-    };
-  
-    window.addEventListener("scroll", handleScroll);
-    console.log("Show Portal:", showPortal);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <>
-      {showPortal && (
-        <div className="sun-portal">
-          <div className="sun">☀️</div> {/* Test element */}
-          <ul className="orbit">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+    <div className="container">
+      <ul id="menu" className={isOpen ? "active" : ""}>
+        {/* Circle Button */}
+        <a
+          className={`menu-button ${isOpen ? "icon-minus" : "icon-plus"}`}
+          onClick={toggleMenu}
+          href="#menu"
+          title="Toggle Navigation"
+        ></a>
+
+        {/* Menu Items */}
+        <li className="menu-item">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <span className="fa fa-github"></span>
+          </a>
+        </li>
+        <li className="menu-item">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <span className="fa fa-linkedin"></span>
+          </a>
+        </li>
+        <li className="menu-item">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <span className="fa fa-instagram"></span>
+          </a>
+        </li>
+        <li className="menu-item">
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <span className="fa fa-twitter"></span>
+          </a>
+        </li>
+      </ul>
+
+      {/* Static Content Below Menu */}
+      <div className="content">
+        <div className="text">
+          <h3>Click circle!</h3>
+          <h6>Tada...!</h6>
         </div>
-      )}
-    </>
+      </div>
+    </div>
   );
 };
 

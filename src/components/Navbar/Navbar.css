@@ -1,67 +1,93 @@
-/* Sun Portal Container */
-.sun-portal {
-    position: fixed;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%);
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, #ffea00, #ff8c00); /* Sun-like gradient */
-    border-radius: 50%; /* Circle */
-    box-shadow: 0 0 30px #ffea00, 0 0 60px #ff8c00; /* Glow effect */
-    z-index: 9999;
-  }
-  
-  /* Navigation Links Static Around the Portal */
-  .orbit {
-    list-style: none;
-    position: absolute;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .orbit li {
-    position: absolute;
-    color: #fff;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; /* Cyberpunk-style glow */
-  }
-  
-  .orbit li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .orbit li a:hover {
-    color: #ffea00;
-    text-shadow: 0 0 10px #ffea00, 0 0 20px #ffea00; /* Hover effect */
-  }
-  
-  /* Position Links Statistically Around the Portal */
-  .orbit li:nth-child(1) {
-    top: -60px; /* Top position */
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .orbit li:nth-child(2) {
-    bottom: -60px; /* Bottom position */
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .orbit li:nth-child(3) {
-    left: -120px; /* Left position */
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  .orbit li:nth-child(4) {
-    right: -120px; /* Right position */
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
+body {
+  font-family: "Dosis", sans-serif;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+}
+
+#menu {
+  width: 150px;
+  height: 150px;
+  position: fixed; /* Fixed positioning ensures it stays in the viewport */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Center it horizontally and vertically */
+  list-style: none;
+  font-size: 200%;
+  z-index: 999; /* Ensure it's above everything else */
+}
+
+.menu-button {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #f40; /* Orange */
+  color: #fff;
+  text-align: center;
+  line-height: 150px;
+  cursor: pointer;
+}
+
+.menu-item {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  left: 50%;
+  line-height: 5px;
+  top: 50%;
+  margin: -35px 0 0 -35px;
+  border-radius: 50%;
+  background-color: #f40;
+  transform: translate(0px, 0px);
+  transition: transform 500ms;
+  z-index: -1;
+  opacity: 0;
+}
+
+.menu-item a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.menu-item:hover {
+  opacity: 0.5;
+  box-shadow: 0 5px 10px black;
+}
+
+.content {
+  position: absolute;
+  text-align: center;
+  margin: -10px 0 0 -30px;
+  top: 70%;
+  left: 50%;
+  font-size: 20px;
+}
+
+#menu.active .menu-item {
+  opacity: 1;
+}
+
+/* Expanded positions */
+#menu.active .menu-item:nth-child(2) {
+  transform: translate(-100px, -150px);
+}
+#menu.active .menu-item:nth-child(3) {
+  transform: translate(0px, -200px);
+}
+#menu.active .menu-item:nth-child(4) {
+  transform: translate(100px, -150px);
+}
+#menu.active .menu-item:nth-child(5) {
+  transform: translate(150px, 0px);
+}

@@ -1,6 +1,7 @@
 import "./styles.css";
 import Plx from "react-plx";
 import Navbar from "./components/Navbar/Navbar";
+import Navbar_2 from "./components/Navbar/Navbar_2"
 
 export default function App() {
   return (
@@ -86,6 +87,10 @@ export default function App() {
 
       {/* Sun Portal Navbar */}
       <Navbar />
+
+      {/* Speedometer Navbar */}
+      {/* <Navbar_2 /> */}
+
     </div>
   );
 }
