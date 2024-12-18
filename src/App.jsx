@@ -1,9 +1,32 @@
+import React, { useState, useEffect } from "react";
 import "./styles.css";
 import Plx from "react-plx";
 import Navbar from "./components/Navbar/Navbar";
-import Navbar_2 from "./components/Navbar/Navbar_2"
+import Navbar_2 from "./components/Navbar/Navbar_2";
 
 export default function App() {
+  const [showNavbars, setShowNavbars] = useState(false); // Track scroll position for both navbars
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY; // Get current scroll position
+      console.log("Scroll Position:", scrollPosition); // Log scroll position to debug
+
+      // Show Navbars when scroll position >= 600
+      if (scrollPosition >= 600) {
+        setShowNavbars(true);
+      } else {
+        setShowNavbars(false);
+      }
+    };
+
+    // Attach scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup event listener on unmount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div>
       {/* Foreground Image */}
@@ -11,7 +34,7 @@ export default function App() {
         parallaxData={[
           {
             start: 0,
-            end: 1100, // Increase this value to control scroll zoom effect
+            end: 1100,
             easing: "ease-in",
             properties: [{ startValue: 1, endValue: 1.6, property: "scale" }],
           },
@@ -85,12 +108,14 @@ export default function App() {
         />
       </Plx>
 
-      {/* Sun Portal Navbar */}
-      <Navbar />
-
-      {/* Speedometer Navbar */}
-      {/* <Navbar_2 /> */}
-
+      {/* Conditionally Render Navbars */}
+      {showNavbars && (
+        <>
+          <Navbar />
+          {/* Uncomment below line if you want both navbars */}
+          {/* <Navbar_2 /> */}
+        </>
+      )}
     </div>
   );
 }
