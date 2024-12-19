@@ -32,11 +32,30 @@ const Navbar = () => {
         ></a>
 
         {/* Menu Items */}
+        {/* changing the order below will affect how they appear in the navbar */}
+        
+        {/* Hobbies */}
         <li className="menu-item">
-          <a href="/about">
-            <img src={PersonIcon} alt="About" />
+          <a href="/hobbies">
+            <img src={HobbiesIcon} alt="Hobbies" />
           </a>
         </li>
+
+        {/* Projects */}
+        <li className="menu-item">
+          <a href="/projects">
+            <img src={ProjectsIcon} alt="Projects" />
+          </a>
+        </li>
+
+        {/* Experience */}
+        <li className="menu-item">
+          <a href="/experience">
+            <img src={ExperienceIcon} alt="Experience" />
+          </a>
+        </li>
+
+        {/* Contact */}
         <li
           className="menu-item"
           onMouseEnter={() => setIsHovered(true)}
@@ -49,21 +68,14 @@ const Navbar = () => {
             />
           </a>
         </li>
+        
+        {/* About */}
         <li className="menu-item">
-          <a href="/experience">
-            <img src={ExperienceIcon} alt="Experience" />
+          <a href="/about">
+            <img src={PersonIcon} alt="About" />
           </a>
         </li>
-        <li className="menu-item">
-          <a href="/hobbies">
-            <img src={HobbiesIcon} alt="Hobbies" />
-          </a>
-        </li>
-        <li className="menu-item">
-          <a href="/projects">
-            <img src={ProjectsIcon} alt="Projects" />
-          </a>
-        </li>
+        
       </ul>
 
       {/* Static Content Below Menu */}
