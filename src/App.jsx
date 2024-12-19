@@ -175,15 +175,18 @@ export default function App() {
           top: 0,
           width: "100%",
           height: "100vh",
-          transform: "translateY(10%) scale(0.9)",
           zIndex: 100,
+          objectFit: "cover",
         }}
       >
         <img
+          className="shift-bg-mobile"
           style={{
             width: "100%",
-            height: "auto",
+            // height: "auto",
+            height: "100%",
             objectFit: "cover",
+            objectPosition: "top",
           }}
           src="bg.png"
           alt="Foreground"
@@ -196,7 +199,8 @@ export default function App() {
           {
             start: 0,
             end: 800,
-            properties: [{ startValue: 1, endValue: 1.18, property: "scale" }],
+            // old end value was 1.18
+            properties: [{ startValue: 1, endValue: 1.1, property: "scale" }],
           },
         ]}
         style={{

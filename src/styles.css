@@ -47,10 +47,6 @@ img[src="/text-img.webp"] {
     object-fit: cover; /* Ensure it fills screen */
   }
 
-  img[src="bg.png"] {
-    transform: scale(3.5) translateY(35%) translateX(2%); /* Zoom in and shift down */
-    object-fit: cover; /* Ensure it fills the viewport */
-  }
 
   /* Cyberpunk Text - Larger and Centered */
   img[src="/text-img.webp"] {
@@ -61,6 +57,9 @@ img[src="/text-img.webp"] {
 }
 
 
+  .plx-container {
+    transform: translateY(0) scale(1); /* Remove scaling on vertical screens */
+  }
 
 nav {
   box-shadow: 0 0 10px #0ff0fc, 0 0 20px #0ff0fc;
