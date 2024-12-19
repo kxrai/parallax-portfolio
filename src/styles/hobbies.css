@@ -1,0 +1,13 @@
+.banner .slider .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .banner .content .author {
+    font-family: Poppins;
+    text-align: right;
+    max-width: 200px;
+    color: #fff;
+  }
+  
