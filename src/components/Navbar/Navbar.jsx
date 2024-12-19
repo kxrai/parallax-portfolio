@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 
+// Import SVG icons
+import PersonIcon from "../../assets/person.svg";
+import ContactIcon from "../../assets/envelope-close.svg";
+import ContactHoverIcon from "../../assets/envelope-open.svg";
+import ExperienceIcon from "../../assets/experience.svg";
+import HobbiesIcon from "../../assets/hobbies.svg";
+import ProjectsIcon from "../../assets/projects.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -22,28 +30,33 @@ const Navbar = () => {
 
         {/* Menu Items */}
         <li className="menu-item">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-            <span className="fa fa-github"></span>
+          <a href="/about">
+            <img src={PersonIcon} alt="About" />
           </a>
         </li>
         <li className="menu-item">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <span className="fa fa-linkedin"></span>
+          <a href="/contact">
+            <img
+              src={isHovered ? ContactHoverIcon : ContactIcon}
+              alt="Contact"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            />
           </a>
         </li>
         <li className="menu-item">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <span className="fa fa-instagram"></span>
+          <a href="/experience">
+            <img src={ExperienceIcon} alt="Experience" />
           </a>
         </li>
         <li className="menu-item">
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <span className="fa fa-twitter"></span>
+          <a href="/hobbies">
+            <img src={HobbiesIcon} alt="Hobbies" />
           </a>
         </li>
         <li className="menu-item">
-          <a href="https://google.com" target="_blank" rel="noopener noreferrer">
-            <span className="fa fa-google"></span>
+          <a href="/projects">
+            <img src={ProjectsIcon} alt="Projects" />
           </a>
         </li>
       </ul>
