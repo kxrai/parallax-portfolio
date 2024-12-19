@@ -9,23 +9,23 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY; // Get current scroll position
-      console.log("Scroll Position:", scrollPosition); // Log scroll position to debug
-
-      // Show Navbars when scroll position >= 600
-      if (scrollPosition >= 800) {
+      const scrollPosition = window.scrollY;
+  
+      // Set scroll thresholds based on screen width
+      const scrollThreshold = window.innerWidth >= 768 ? 680 : 800; // 700 for desktop, 800 for mobile
+  
+      console.log("Scroll Position:", scrollPosition, "Threshold:", scrollThreshold);
+  
+      if (scrollPosition >= scrollThreshold) {
         setShowNavbars(true);
       } else {
         setShowNavbars(false);
       }
     };
-
-    // Attach scroll event listener
+  
     window.addEventListener("scroll", handleScroll);
-
-    // Cleanup event listener on unmount
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, []);  
 
   return (
     <div>
@@ -76,7 +76,8 @@ export default function App() {
           width: "100%",
         }}
       >
-        <img style={{ width: "100%" }} src="background.jpg" alt="background" />
+        {/* <img style={{ width: "100%" }} src="background.jpg" alt="background" /> */}
+        <img style={{ width: "100%" }} src="zaun.jpg" alt="background" />
       </Plx>
 
       {/* Centered Text */}

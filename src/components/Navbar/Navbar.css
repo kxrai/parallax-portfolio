@@ -10,13 +10,21 @@ body {
 #menu {
   width: 150px;
   height: 150px;
-  position: fixed; /* Fixed positioning ensures it stays in the viewport */
+  position: fixed; /* Keep it fixed */
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%); /* Center it horizontally and vertically */
+  transform: translate(-50%, -50%); /* Center it */
   list-style: none;
   font-size: 200%;
-  z-index: 999; /* Ensure it's above everything else */
+  z-index: 999; /* Ensure it appears above other elements */
+}
+
+/* Remove any conflicting media queries */
+@media (min-width: 768px) {
+  #menu {
+    display: block; /* Ensure it's visible on desktop */
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
 .menu-button {
