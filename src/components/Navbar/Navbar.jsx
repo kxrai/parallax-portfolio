@@ -13,6 +13,9 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
+  const handleMouseEnter = (item) => setHoveredItem(item);
+  const handleMouseLeave = () => setHoveredItem(null);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -34,13 +37,15 @@ const Navbar = () => {
             <img src={PersonIcon} alt="About" />
           </a>
         </li>
-        <li className="menu-item">
+        <li
+          className="menu-item"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <a href="/contact">
             <img
               src={isHovered ? ContactHoverIcon : ContactIcon}
               alt="Contact"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
             />
           </a>
         </li>
