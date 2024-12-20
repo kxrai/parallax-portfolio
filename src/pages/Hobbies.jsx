@@ -1,8 +1,18 @@
-import React from 'react';
-// import '../styles/slider.css'; // Import slider-specific CSS
+import React, { useEffect } from 'react';
 import '../styles/hobbies.css';
 
 const Hobbies = () => {
+  // Lock the body scroll when this component mounts
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+    document.body.style.height = '100vh'; // Lock height
+
+    return () => {
+      document.body.style.overflow = 'auto'; // Restore scrolling on unmount
+      document.body.style.height = 'auto'; // Reset height
+    };
+  }, []);
+
   return (
     <div className="hobbies-page">
       {/* Background */}
@@ -11,7 +21,7 @@ const Hobbies = () => {
       {/* Model Overlay */}
       <div className="model"></div>
 
-      {/* Slider */}
+      {/* 3D Slider */}
       <div className="banner">
         <div className="slider" style={{ '--quantity': 10 }}>
           <div className="item" style={{ '--position': 1 }}>
@@ -45,21 +55,23 @@ const Hobbies = () => {
             <img src="/hobby_images/dragon_10.jpg" alt="Dragon 10" />
           </div>
         </div>
-      </div>
-      {/* Content Section */}
-      <div className="content">
-        <h1 data-content="MY HOBBIES">MY HOBBIES</h1>
-        <div className="author">
-          <h2>Alicia Loi</h2>
-          <p>
-            <b>About My Interests:</b>
-          </p>
-          <p>
-            I enjoy music, playing guitar and piano, video games, and art. I love listening to music,
-            exploring UI design, and web development. Sports such as basketball, hockey, volleyball,
-            swimming, and snowboarding are also part of my hobbies. I am passionate about traveling
-            and 3D visualization, bringing creativity to life.
-          </p>
+
+        {/* Content Section */}
+        <div className="content">
+          <div className="hobbies-title">
+            <h1>MY HOBBIES</h1>
+          </div>
+          {/* <div className="author-details">
+            <h2>Alicia Loi</h2>
+            <p>Web Development & UI Design</p>
+            <ul>
+              <li>Playing Guitar & Piano</li>
+              <li>Video Games & Art</li>
+              <li>Sports: Basketball, Swimming, Snowboarding</li>
+              <li>Traveling</li>
+              <li>3D Visualization</li>
+            </ul>
+          </div> */}
         </div>
       </div>
     </div>
