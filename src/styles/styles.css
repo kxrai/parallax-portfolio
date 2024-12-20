@@ -65,10 +65,6 @@ nav {
   box-shadow: 0 0 10px #0ff0fc, 0 0 20px #0ff0fc;
 }
 
-a {
-  text-shadow: 0 0 5px #f40, 0 0 10px #f40;
-}
-
 a:hover {
   color: #ffea00;
   text-shadow: 0 0 5px #ffea00, 0 0 10px #ffea00;

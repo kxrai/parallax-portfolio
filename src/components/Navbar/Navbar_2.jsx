@@ -1,62 +1,55 @@
-import React, { useState } from 'react';
-import './Navbar_2.css';
+import React, { useState } from "react";
+import "./Navbar_2.css";
 
 const Navbar_2 = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // Toggle the menu open/close
   const toggleMenu = () => {
-    setIsOpen((prev) => !prev); // Toggle the state
-  };
-
-  // Close the menu when a link is clicked
-  const closeMenu = () => {
-    setIsOpen(false);
+    setMenuOpen(!menuOpen);
   };
 
   return (
-    <nav className="navbar-2">
-      {/* Logo */}
-      <div className="logo">
-        <h2>MY SITE</h2>
+    <div className={`navbar-2 ${menuOpen ? "open" : ""}`}>
+      {/* Circular Menu Button */}
+      <div className="nav2-menu-button" onClick={toggleMenu}>
+        <span className="menu-icon">{menuOpen ? "✕" : "+"}</span>
       </div>
 
-      {/* Hamburger Icon */}
-      <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
-      </div>
+      {/* Slide-Up Full-Screen Navigation */}
+      <div className="menu-overlay">
+        {/* Close Button */}
+        {/* <div className="close-button" onClick={toggleMenu}>
+          ✕
+        </div> */}
 
-      {/* Navigation Links */}
-      <ul className={`nav-links ${isOpen ? 'show' : ''}`}>
-        <li>
-          <a href="/" onClick={closeMenu}>
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="/about" onClick={closeMenu}>
-            About
-          </a>
-        </li>
-        <li>
-          <a href="/projects" onClick={closeMenu}>
-            Projects
-          </a>
-        </li>
-        <li>
-          <a href="/hobbies" onClick={closeMenu}>
-            Hobbies
-          </a>
-        </li>
-        <li>
-          <a href="/contact" onClick={closeMenu}>
-            Contact
-          </a>
-        </li>
-      </ul>
-    </nav>
+        <ul className="menu-items">
+          <li>
+            <span className="nav-number">01</span>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <span className="nav-number">02</span>
+            <a href="/about">About</a>
+          </li>
+          <li>
+            <span className="nav-number">03</span>
+            <a href="/hobbies">Hobbies</a>
+          </li>
+          <li>
+            <span className="nav-number">04</span>
+            <a href="/projects">Projects</a>
+          </li>
+          <li>
+            <span className="nav-number">05</span>
+            <a href="/experience">Experience</a>
+          </li>
+          <li>
+            <span className="nav-number">06</span>
+            <a href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   );
 };
 

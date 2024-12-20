@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+/* Grid Background */
 .hobbies-page::before {
   content: '';
   position: fixed;
@@ -12,7 +13,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: white; /* White background */
+  background-color: white;
   background-image: 
     repeating-linear-gradient(
       to right, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 100px
@@ -20,10 +21,10 @@
     repeating-linear-gradient(
       to bottom, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 100px
     );
-  z-index: -3; /* Send grid background behind all other elements */
+  z-index: -3;
 }
 
-/* Background Container */
+/* Background Container - bg.png remains untouched */
 .background-container {
   position: fixed;
   top: 0;
@@ -33,8 +34,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/public/hobby_images/bg.png'); /* Scaled-down background */
-  background-size: 90%; /* Adjust scale to make it smaller */
+  background-image: url('/public/hobby_images/bg.png'); /* Retains original */
+  background-size: 90%; /* Do not change this */
   background-repeat: no-repeat;
   background-position: center center;
   z-index: -2;
@@ -43,12 +44,12 @@
 /* Model Overlay */
 .model {
   position: absolute;
-  bottom: -20%;
+  bottom: -20%; /* Original offset */
   left: 50%;
   transform: translateX(-50%);
   width: 100vw;
   height: 100vh;
-  background-image: url('/public/hobby_images/model.png'); /* Model Image */
+  background-image: url('/public/hobby_images/model.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -63,24 +64,25 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  position: relative;
 }
 
 /* Slider Styling */
 .slider {
   position: relative;
-  width: 150px; /* Adjusted size */
-  height: 200px; /* Adjusted size */
+  width: 150px; /* Original size */
+  height: 200px; /* Original size */
   transform-style: preserve-3d;
   transform: perspective(800px) rotateX(-10deg);
-  animation: autoRun 60s linear infinite; /* Slower rotation */
+  animation: autoRun 60s linear infinite;
 }
 
 @keyframes autoRun {
   from {
-      transform: perspective(800px) rotateX(-10deg) rotateY(0deg);
+    transform: perspective(800px) rotateX(-10deg) rotateY(0deg);
   }
   to {
-      transform: perspective(800px) rotateX(-10deg) rotateY(360deg);
+    transform: perspective(800px) rotateX(-10deg) rotateY(360deg);
   }
 }
 
@@ -99,45 +101,38 @@
 /* Content Section */
 .content {
   position: absolute;
-  top: 0; /* Align content at the top of the screen */
+  top: 0;
   left: 50%;
-  transform: translateX(-50%); /* Center horizontally */
+  transform: translateX(-50%);
   text-align: center;
   color: #25283B;
   font-family: 'Poppins', sans-serif;
   max-width: 1200px;
+  z-index: 1;
 }
 
-
-/* Content Heading - My Hobbies */
 .content h1 {
-  font-family: 'ICA Rubrik'; /* Maintain the font */
-  font-size: 5rem; /* Adjust size if needed */
+  font-family: 'ICA Rubrik';
+  font-size: 5rem;
   line-height: 1;
-  white-space: nowrap; /* Prevents breaking into two lines */
-  position: absolute; /* Lock to the parent element */
-  top: 0; /* Align to the top */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center it horizontally */
-  margin: 0; /* Remove any default margins */
-  padding: 6rem 0; /* Add a slight spacing from the top */
-  text-align: center; /* Align the text */
+  white-space: nowrap;
+  margin: 0;
+  padding: 6rem 0;
+  text-align: center;
 }
 
 .content h1::after {
   position: absolute;
   content: attr(data-content);
   color: transparent;
-  -webkit-text-stroke: 2px #d2d2d2; /* Add a white stroke effect */
+  -webkit-text-stroke: 2px #d2d2d2;
   z-index: -1;
   inset: 0;
 }
 
-
 .content .author {
   font-size: 1.2rem;
   line-height: 1.5;
-  text-align: center;
 }
 
 .content h2 {
@@ -152,34 +147,26 @@
 
 /* Responsive Adjustments for Mobile */
 @media screen and (max-width: 768px) {
-  /* Adjust the content heading */
   .content h1 {
-    font-size: 3rem; /* Smaller font size */
-    top: 3rem; /* Adjust position slightly down */
+    font-size: 3rem;
+    padding-top: 3rem;
   }
 
-  .content .author p {
-    font-size: 1rem;
-  }
-
-  /* Adjust the slider */
   .slider {
     width: 100px;
     height: 150px;
   }
 
   .slider .item {
-    transform: rotateY(calc((var(--position) - 1) * 36deg)) translateZ(200px);
+    transform: rotateY(calc((var(--position) - 1) * 36deg)) translateZ(250px);
   }
 
-  /* Adjust background container */
-  .background-container {
-    background-size: 90%; /* Adjust size for mobile */
-  }
-
-  /* Adjust the model overlay */
   .model {
-    height: 40%; /* Increase size slightly */
-    bottom: 0; /* Align to the bottom */
+    height: 40%;
+    bottom: 0;
+  }
+
+  .background-container {
+    background-size: 90%; /* Do not change for mobile */
   }
 }
