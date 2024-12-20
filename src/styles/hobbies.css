@@ -1,13 +1,146 @@
-.banner .slider .item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white; /* White background */
+  overflow: hidden; /* Prevent scrolling */
+  height: 100vh;
+}
+
+/* Grid Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white; /* White base background */
+  background-image: 
+      repeating-linear-gradient(
+          to right, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 100px
+      ),
+      repeating-linear-gradient(
+          to bottom, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 100px
+      );
+  z-index: -3; /* Send grid to the back */
+}
+
+/* Background Container */
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/public/hobby_images/bg.png'); /* Scaled-down background */
+  background-size: 70%; /* Adjust scale to make it smaller */
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: -2;
+}
+
+/* Model Overlay */
+.model {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/public/hobby_images/model.png'); /* Model Image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  z-index: -1;
+}
+
+/* Banner Section */
+.banner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Slider Styling */
+.slider {
+  position: relative;
+  width: 150px; /* Adjusted size */
+  height: 200px; /* Adjusted size */
+  transform-style: preserve-3d;
+  transform: perspective(800px) rotateX(-10deg);
+  animation: autoRun 60s linear infinite; /* Slower rotation */
+}
+
+@keyframes autoRun {
+  from {
+      transform: perspective(800px) rotateX(-10deg) rotateY(0deg);
   }
-  
-  .banner .content .author {
-    font-family: Poppins;
-    text-align: right;
-    max-width: 200px;
-    color: #fff;
+  to {
+      transform: perspective(800px) rotateX(-10deg) rotateY(360deg);
   }
-  
+}
+
+.slider .item {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(calc((var(--position) - 1) * 36deg)) translateZ(350px);
+}
+
+.slider .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content Section */
+.content {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: black;
+  font-family: Arial, sans-serif;
+  z-index: 1;
+}
+
+.content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.content p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Media Query for Smaller Screens */
+@media screen and (max-width: 768px) {
+  .slider {
+      width: 100px;
+      height: 150px;
+  }
+
+  .slider .item {
+      transform: rotateY(calc((var(--position) - 1) * 36deg)) translateZ(200px);
+  }
+
+  .background-container {
+      background-size: 100%; /* Full size on mobile */
+  }
+
+  .model {
+      height: 30%;
+  }
+}
