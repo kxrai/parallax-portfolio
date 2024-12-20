@@ -99,23 +99,29 @@
 /* Content Section */
 .content {
   position: absolute;
-  bottom: 10%;
+  top: 0; /* Align content at the top of the screen */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); /* Center horizontally */
   text-align: center;
   color: #25283B;
-  font-family: 'Poppins', sans-serif; /* Font for text content */
+  font-family: 'Poppins', sans-serif;
   max-width: 1200px;
 }
 
+
 /* Content Heading - My Hobbies */
 .content h1 {
-  font-family: 'ICA Rubrik'; /* Keep the same font */
-  font-size: 6em; /* Reduce font size */
-  line-height: 1; /* Tighter line spacing */
-  white-space: nowrap; /* Prevent text from breaking into multiple lines */
-  margin-bottom: 34rem; /* Add a bit of spacing below */
-  position: relative;
+  font-family: 'ICA Rubrik'; /* Maintain the font */
+  font-size: 5rem; /* Adjust size if needed */
+  line-height: 1;
+  white-space: nowrap; /* Prevents breaking into two lines */
+  position: absolute; /* Lock to the parent element */
+  top: 0; /* Align to the top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center it horizontally */
+  margin: 0; /* Remove any default margins */
+  padding: 6rem 0; /* Add a slight spacing from the top */
+  text-align: center; /* Align the text */
 }
 
 .content h1::after {
@@ -144,33 +150,36 @@
   line-height: 1.6;
 }
 
-/* Responsive Adjustments */
+/* Responsive Adjustments for Mobile */
 @media screen and (max-width: 768px) {
+  /* Adjust the content heading */
   .content h1 {
-    font-size: 5rem; /* Smaller heading for mobile */
+    font-size: 3rem; /* Smaller font size */
+    top: 3rem; /* Adjust position slightly down */
   }
+
   .content .author p {
     font-size: 1rem;
   }
-}
 
-/* Media Query for Smaller Screens */
-@media screen and (max-width: 768px) {
+  /* Adjust the slider */
   .slider {
-      width: 100px;
-      height: 150px;
+    width: 100px;
+    height: 150px;
   }
 
   .slider .item {
-      transform: rotateY(calc((var(--position) - 1) * 36deg)) translateZ(200px);
+    transform: rotateY(calc((var(--position) - 1) * 36deg)) translateZ(200px);
   }
 
+  /* Adjust background container */
   .background-container {
-      background-size: 100%; /* Full size on mobile */
+    background-size: 90%; /* Adjust size for mobile */
   }
 
+  /* Adjust the model overlay */
   .model {
-      height: 30%;
+    height: 40%; /* Increase size slightly */
+    bottom: 0; /* Align to the bottom */
   }
 }
-

@@ -1,81 +1,98 @@
-body {
-    font-family: "Dosis", sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    background: #000;
-    color: #fff;
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-2 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-family: 'Poppins', sans-serif;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Section */
+.logo h2 {
+  font-size: 1.5rem;
+  color: #25283B;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #25283B;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Navigation Links */
+.nav-links {
+  position: absolute;
+  top: 0;
+  right: -100%; /* Initially off-screen */
+  height: 100vh;
+  width: 60%;
+  max-width: 300px;
+  background-color: rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  transition: right 0.3s ease-in-out;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links.show {
+  right: 0; /* Slide into view */
+}
+
+.nav-links li {
+  text-align: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #25283B;
+  font-size: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #6B7280; /* Slight gray hover */
+}
+
+/* Responsive for Smaller Screens */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    width: 100%; /* Full width on smaller screens */
   }
-  
-  .grain {
-    background: radial-gradient(circle, #111, #000);
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    position: fixed;
-    z-index: -1;
-  }
-  
-  .center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .core {
-    width: 10px;
-    height: 10px;
-    background-color: #ff8c00; /* Cyberpunk Core */
-    border-radius: 50%;
-    box-shadow: 0 0 10px #ff4500, 0 0 20px #ff8c00;
-  }
-  
-  .outer_one__piece,
-  .outer_two__piece,
-  .outer_three__piece,
-  .outer_four__piece,
-  .outer_five__piece {
-    width: 5px;
-    height: 5px;
-    background-color: #ff4500; /* Cyberpunk Orange */
-    border-radius: 50%;
-    position: absolute;
-    box-shadow: 0 0 5px #ff8c00;
-  }
-  
-  .pieces {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    margin-top: 50px;
-  }
-  
-  .future_ui__piece {
-    background-color: #222;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px #ff8c00;
-    color: #fff;
-    text-shadow: 0 0 5px #ffea00;
-    position: relative;
-  }
-  
-  .future_ui__piece span {
-    display: block;
-    font-size: 1rem;
-    color: #ffea00;
-  }
-  
-  .line {
-    width: 100%;
-    height: 2px;
-    background-color: #ff4500;
-    margin: 5px 0;
-  }
-  
-  .tip {
-    font-size: 0.8rem;
-    color: #fff;
-  }
-  
+}

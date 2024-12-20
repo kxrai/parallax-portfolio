@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import '../styles/hobbies.css';
+import Navbar_2 from '../components/Navbar/Navbar_2';
 
 const Hobbies = () => {
   // Lock the body scroll when this component mounts
@@ -15,6 +16,7 @@ const Hobbies = () => {
 
   return (
     <div className="hobbies-page">
+      <Navbar_2 />
       {/* Background */}
       <div className="background-container"></div>
 
