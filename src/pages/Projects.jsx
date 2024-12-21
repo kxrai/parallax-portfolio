@@ -4,13 +4,9 @@ import Navbar_2 from '../components/Navbar/Navbar_2';
 
 const Projects = () => {
   useEffect(() => {
-    // Lock scrolling on mount
-    // document.body.style.overflow = 'hidden';
-
-    // Unlock scrolling on unmount
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
+    // Ensure old styles are removed
+    document.body.classList.remove('old-page-style');
+    document.body.style.overflow = 'auto'; // Enable vertical scrolling
   }, []);
 
   const projects = [
@@ -32,8 +28,8 @@ const Projects = () => {
       Whether you’re out with friends for dinner or on a group trip, 
       MASS Splitter helps you manage shared expenses effortlessly.`,
       images: ['/project_images/mass_splitter.png'],
-      github: '', // No GitHub link
-      website: '', // No website link
+      github: '',
+      website: '',
     },
     {
       id: 3,
@@ -43,8 +39,8 @@ const Projects = () => {
       to a wide range of chords, making practice and learning effortless 
       for beginners and pros alike.`,
       images: ['/project_images/chord_master.png'],
-      github: '', // No GitHub link
-      website: '', // No website link
+      github: '',
+      website: '',
     },
   ];
 
@@ -66,7 +62,6 @@ const Projects = () => {
               <h2 className="projects-card-title">{project.title}</h2>
               <p className="projects-card-description">{project.description}</p>
               <div className="projects-card-buttons">
-                {/* GitHub button only if there's a GitHub link */}
                 {project.github && (
                   <a
                     href={project.github}
@@ -81,8 +76,6 @@ const Projects = () => {
                     />
                   </a>
                 )}
-
-                {/* Website button only if there's a website link */}
                 {project.website && (
                   <a
                     href={project.website}
@@ -97,8 +90,6 @@ const Projects = () => {
                     />
                   </a>
                 )}
-
-                {/* If *both* GitHub and website links are missing, show “Still in Progress” badge */}
                 {!project.github && !project.website && (
                   <span className="in-progress-badge">Still in Progress</span>
                 )}

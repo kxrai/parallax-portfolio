@@ -17,19 +17,24 @@
         transparent 1px,
         transparent 100px
       );
-  
     min-height: 100vh;
+    height: auto;
+    margin: 0;
     padding: 20px;
     font-family: 'Poppins', sans-serif;
-  }
-  
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
   .projects-title {
     font-family: 'ICA Rubrik';
     font-size: 5rem;
     line-height: 1;
     white-space: nowrap;
     margin: 0;
-    padding: 4rem 0;
+    padding: 2rem 0;
     text-align: center;
   }
   
@@ -38,6 +43,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    padding-bottom: 50px; /* Extra space for better mobile scrolling */
   }
   
   .projects-card {
@@ -84,8 +90,8 @@
   
   .projects-card-buttons {
     display: flex;
-    justify-content: center;  /* Centers the buttons horizontally */
-    gap: 1rem;               /* Optional: space between buttons */
+    justify-content: center;
+    gap: 1rem;
   }
   
   .projects-button {
@@ -97,7 +103,7 @@
     border-radius: 8px;
     padding: 8px;
     cursor: pointer;
-    text-decoration: none; /* Remove underline from anchor */
+    text-decoration: none;
   }
   
   .projects-button .button-icon {
@@ -106,13 +112,13 @@
   }
   
   .in-progress-badge {
-  display: inline-block;
-  background-color: #ffd54f; /* Example pastel yellow */
-  color: #333;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  margin-top: 8px;
-  /* If you want it centered, adjust the container's styling as well */
-}
+    display: inline-block;
+    background-color: #ffd54f; /* Example pastel yellow */
+    color: #333;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 8px;
+  }
+  

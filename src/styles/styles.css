@@ -12,6 +12,9 @@ body {
   overflow-x: hidden;
   font-family: 'Orbitron', sans-serif;
   text-align: center;
+}
+
+.old-page-style {
   background: #000;
   height: 200vh;
 }

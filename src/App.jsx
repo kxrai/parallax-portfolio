@@ -13,6 +13,7 @@ export default function App() {
   const videoRef = useRef(null);
 
   useEffect(() => {
+    document.body.classList.add('old-page-style');
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const scrollThreshold = window.innerWidth >= 768 ? 680 : 800;
