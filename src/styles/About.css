@@ -75,6 +75,23 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
 }
 
+.about-video {
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  /* border-radius: 50%; */
+  overflow: hidden;
+}
+
+.about-video-content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .about-footer {
   margin-top: 2rem;
   font-size: 0.9rem;
