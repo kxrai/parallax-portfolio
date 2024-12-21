@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Navbar_2 from "./components/Navbar/Navbar_2";
 import About from "./pages/About"; 
 import Hobbies from "./pages/Hobbies";
+import Projects from './pages/Projects';
 
 export default function App() {
   const [showNavbars, setShowNavbars] = useState(false);
@@ -148,6 +149,8 @@ export default function App() {
         <Route path="/about" element={<About />} />
         {/* Hobbies Route */}
         <Route path="/hobbies" element={<Hobbies />} />
+        {/* Projects Route */}
+        <Route path="/projects" element={<Projects />} />
       </Routes>
     </Router>
   );

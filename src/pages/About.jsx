@@ -1,9 +1,11 @@
 import React from "react";
 import "../styles/about.css";
+import Navbar_2 from '../components/Navbar/Navbar_2';
 
 const About = () => {
   return (
     <div className="about-container">
+      <Navbar_2 />
       {/* Header */}
       <header className="about-header">
         <h1>About Me</h1>
