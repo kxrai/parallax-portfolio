@@ -6,7 +6,7 @@ const Projects = () => {
   useEffect(() => {
     // Ensure old styles are removed
     document.body.classList.remove('old-page-style');
-    document.body.style.overflow = 'auto'; // Enable vertical scrolling
+    document.body.classList.add('projects-page');
   }, []);
 
   const projects = [

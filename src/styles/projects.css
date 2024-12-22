@@ -1,31 +1,37 @@
 .projects-page {
-    background-color: #ffffff;
-    background-image: 
-      /* Vertical lines */
-      repeating-linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.1) 0px,
-        rgba(0, 0, 0, 0.1) 1px,
-        transparent 1px,
-        transparent 100px
-      ),
-      /* Horizontal lines */
-      repeating-linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.1) 0px,
-        rgba(0, 0, 0, 0.1) 1px,
-        transparent 1px,
-        transparent 100px
-      );
-    min-height: 100vh;
-    height: auto;
-    margin: 0;
-    padding: 20px;
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
-    overflow-x: hidden;
+  background-color: #ffffff;
+  background-image: 
+    repeating-linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.1) 0px,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 1px,
+      transparent 100px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1) 0px,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 1px,
+      transparent 100px
+    );
+  background-size: 100px 100px; /* Ensure grid lines match size */
+  background-position: 0 0; /* Align grid to top-left corner */
+  min-height: 100vh; /* Ensure it covers the entire viewport */
+  height: auto; /* Allow the height to expand for scrolling */
+  padding: 0; /* Remove extra padding to prevent offset */
+  margin: 0; /* Remove margin to prevent misalignment */
+  font-family: 'Poppins', sans-serif;
+  overflow-y: scroll; /* Ensure scrolling works */
+  overflow-x: hidden; /* Prevent horizontal scrollbars */
+  position: relative;
+  box-sizing: border-box;
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+
+body.projects-page {
+  overflow-y: auto;
 }
 
   .projects-title {

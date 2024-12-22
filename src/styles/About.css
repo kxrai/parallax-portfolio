@@ -10,7 +10,6 @@
   color: #25283B;
   background-color: #ffffff;
   background-image: 
-    /* Vertical lines */
     repeating-linear-gradient(
       to right,
       rgba(0, 0, 0, 0.1) 0px,
@@ -18,7 +17,6 @@
       transparent 1px,
       transparent 100px
     ),
-    /* Horizontal lines */
     repeating-linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.1) 0px,
@@ -26,31 +24,32 @@
       transparent 1px,
       transparent 100px
     );
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background-size: 100px 100px; /* Ensure grid lines match size */
+  background-position: 0 0; /* Align grid to top-left corner */
+  min-height: 100vh; /* Ensure it covers the entire viewport */
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Header, content, and footer */
   padding: 20px;
-  text-align: center;
+  overflow: hidden; /* Prevent scrolling */
 }
 
 .about-header h1 {
   font-family: 'ICA Rubrik';
-    font-size: 5rem;
-    line-height: 1;
-    white-space: nowrap;
-    margin: 0;
-    /* padding: 4rem 0; */
-    text-align: center;
+  font-size: 5rem;
+  line-height: 1;
+  white-space: nowrap;
+  margin: 0;
+  padding: 2rem 0;
+  text-align: center;
 }
 
 .about-content {
   font-size: 1.2rem;
   line-height: 1.8;
-  margin: 20px auto;
+  margin: 0 auto;
   max-width: 700px;
   text-align: left;
+  overflow: hidden; /* Prevent unnecessary scrolling within this section */
 }
 
 .about-content p {
@@ -66,15 +65,6 @@
   color: #555;
 }
 
-.about-image img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin: 20px auto;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
-}
-
 .about-video {
   margin: 30px auto;
   display: flex;
@@ -82,7 +72,7 @@
   align-items: center;
   width: 200px;
   height: 200px;
-  /* border-radius: 50%; */
+  border-radius: 50%; /* Circular frame */
   overflow: hidden;
 }
 
@@ -90,6 +80,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50%;
 }
 
 .about-footer {
@@ -97,6 +88,7 @@
   font-size: 0.9rem;
   color: #666;
   max-width: 700px;
+  text-align: center;
 }
 
 .about-footer p {

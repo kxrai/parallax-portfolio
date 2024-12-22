@@ -7,6 +7,7 @@ const About = () => {
 
   useEffect(() => {
     document.body.classList.remove('old-page-style');
+    document.body.classList.add('about-page-style');
     
     const video = videoRef.current;
 
