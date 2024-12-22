@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    color: #fff;
+  }
+  
+  .ink-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999; /* Ensure it appears above everything else */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+  }
+  
+  .banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .banner .content .title {
+    font-family: 'Hallowed Grounds', sans-serif; /* Ensure you include this font */
+    font-size: 5em;
+    color: white;
+    text-align: center;
+  }
+  
+  .banner p {
+    font-size: 1.2em;
+    color: #fff;
+    margin-top: 10px;
+  }
+  
+  .banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  
+    /* Ink effect */
+    mask-image: url('/public/ink_loader/ink_lv1.png'); /* Replace with your GIF path */
+    mask-size: cover;
+    mask-position: center;
+  
+    /* Webkit compatibility */
+    -webkit-mask-image: url('/public/ink_loader/ink_lv2.gif');
+    -webkit-mask-size: cover;
+    -webkit-mask-position: center;
+  }
+  

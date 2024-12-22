@@ -1,16 +1,25 @@
 import React, { useState, useEffect, useRef } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import "./styles/styles.css";
 import Plx from "react-plx";
 import Navbar from "./components/Navbar/Navbar";
 import Navbar_2 from "./components/Navbar/Navbar_2";
+import InkLoader from "./components/InkLoader/InkLoader";
 import About from "./pages/About"; 
 import Hobbies from "./pages/Hobbies";
 import Projects from './pages/Projects';
 
-export default function App() {
+function App() {
+  const [loading, setLoading] = useState(true);
+  const location = useLocation(); // Ensure this is inside Router context
   const [showNavbars, setShowNavbars] = useState(false);
   const videoRef = useRef(null);
+
+  useEffect(() => {
+    setLoading(true);
+    const timeout = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timeout);
+  }, [location.pathname]); // Properly set up to trigger when location changes
 
   useEffect(() => {
     document.body.classList.add('old-page-style');
@@ -32,7 +41,8 @@ export default function App() {
   };
 
   return (
-    <Router>
+    <>
+      <InkLoader isLoading={loading} />
       <Routes>
         {/* Home Route */}
         <Route
@@ -144,8 +154,6 @@ export default function App() {
             </div>
           }
         />
-        {/* Home Page Route */}
-        <Route path="/" element={<div>Home Page</div>} />
         {/* About Route */}
         <Route path="/about" element={<About />} />
         {/* Hobbies Route */}
@@ -153,6 +161,14 @@ export default function App() {
         {/* Projects Route */}
         <Route path="/projects" element={<Projects />} />
       </Routes>
+    </>
+  );
+}
+
+export default function WrappedApp() {
+  return (
+    <Router>
+      <App />
     </Router>
   );
 }
