@@ -8,6 +8,7 @@ import InkLoader from "./components/InkLoader/InkLoader";
 import About from "./pages/About"; 
 import Hobbies from "./pages/Hobbies";
 import Projects from './pages/Projects';
+import Experience from './pages/Experience';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -160,6 +161,8 @@ function App() {
         <Route path="/hobbies" element={<Hobbies />} />
         {/* Projects Route */}
         <Route path="/projects" element={<Projects />} />
+        {/* Experience Route */}
+        <Route path="/experience" element={<Experience />} />
       </Routes>
     </>
   );
