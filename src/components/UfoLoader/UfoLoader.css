@@ -1,0 +1,50 @@
+/* UFO Loading Animation */
+.ufo-loader-container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Background during loading */
+    z-index: 9999; /* Above all other content */
+  }
+  
+  .ufo {
+    width: 100px;
+    height: 30px;
+    background: #fff;
+    border-radius: 50%;
+    position: relative;
+    animation: ufo-hover 2s infinite;
+  }
+  
+  .ufo::before {
+    content: "";
+    width: 150px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -15px;
+    left: -25px;
+    animation: beam-pulse 2s infinite;
+  }
+  
+  @keyframes ufo-hover {
+    0%, 100% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+  
+  @keyframes beam-pulse {
+    0%, 100% {
+      transform: scaleX(1);
+    }
+    50% {
+      transform: scaleX(0.9);
+    }
+  }
+  

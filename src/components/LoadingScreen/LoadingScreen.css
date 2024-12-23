@@ -1,0 +1,30 @@
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensures it appears above everything else */
+}
+
+/* Outer loading bar container */
+.loading-bar {
+  width: 300px;
+  height: 20px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Animated fill inside the loading bar */
+.loading-bar-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: #007bff; /* Blue fill color */
+  transition: width 0.1s ease-in-out; /* Smooth progress animation */
+}

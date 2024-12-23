@@ -59,7 +59,6 @@ const Experience = () => {
       <h1 className="experience-title">Experience</h1>
 
       <section className="work-experience">
-        <h2>Work Experience</h2>
         <div className="experience-cards">
           {workExperience.map((job, index) => (
             <div key={index} className="experience-card">
