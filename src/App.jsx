@@ -42,7 +42,7 @@ function App() {
 
   return (
     <>
-      <InkLoader isLoading={loading} />
+      {/* <InkLoader isLoading={loading} /> */}
       <Routes>
         {/* Home Route */}
         <Route
