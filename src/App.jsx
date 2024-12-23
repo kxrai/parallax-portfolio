@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Hobbies from "./pages/Hobbies";
 import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
+import Contact from "./pages/Contact";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -201,6 +202,7 @@ function App() {
       <Route path="/hobbies" element={<Hobbies />} />
       <Route path="/projects" element={<Projects />} />
       <Route path="/experience" element={<Experience />} />
+      <Route path="/contact" element={<Contact />} />
     </Routes>
   );
 }
