@@ -4,14 +4,18 @@ import Navbar_2 from '../components/Navbar/Navbar_2';
 
 const Hobbies = () => {
   // Lock the body scroll when this component mounts
-  useEffect(() => {
-    document.body.style.overflow = 'hidden'; // Prevent scrolling
-    document.body.style.height = '100vh'; // Lock height
+  // useEffect(() => {
+  //   document.body.style.overflow = 'hidden'; // Prevent scrolling
+  //   document.body.style.height = '100vh'; // Lock height
 
-    return () => {
-      document.body.style.overflow = 'auto'; // Restore scrolling on unmount
-      document.body.style.height = 'auto'; // Reset height
-    };
+  //   return () => {
+  //     document.body.style.overflow = 'auto'; // Restore scrolling on unmount
+  //     document.body.style.height = 'auto'; // Reset height
+  //   };
+  // }, []);
+  useEffect(() => {
+    document.body.classList.remove("old-page-style");
+    document.body.style.height = '100vh'; // Lock height
   }, []);
 
   return (

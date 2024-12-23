@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar_2 from "../components/Navbar/Navbar_2";
 import "../styles/experience.css";
 
 const Experience = () => {
+  useEffect(() => {
+    document.body.classList.remove("old-page-style");
+    document.body.classList.add("experience-page-style");
+  }, []);
+
   const workExperience = [
     {
       title: "Frontend Developer",
@@ -58,7 +63,11 @@ const Experience = () => {
         <div className="experience-cards">
           {workExperience.map((job, index) => (
             <div key={index} className="experience-card">
-              <img src={job.logo} alt={`${job.company} logo`} className="experience-logo" />
+              <img
+                src={job.logo}
+                alt={`${job.company} logo`}
+                className="experience-logo"
+              />
               <div className="experience-details">
                 <h3>{job.title}</h3>
                 <h4>{job.company}</h4>
@@ -79,7 +88,11 @@ const Experience = () => {
         <div className="education-cards">
           {education.map((edu, index) => (
             <div key={index} className="education-card">
-              <img src={edu.logo} alt={`${edu.institution} logo`} className="education-logo" />
+              <img
+                src={edu.logo}
+                alt={`${edu.institution} logo`}
+                className="education-logo"
+              />
               <div className="education-details">
                 <h3>{edu.institution}</h3>
                 <p>{edu.degree}</p>
