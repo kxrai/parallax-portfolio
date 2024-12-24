@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import UseAnimations from "react-useanimations";
+import menu from "react-useanimations/lib/menu2"; // Animated Hamburger Icon
 import "./Navbar_2.css";
 
 const Navbar_2 = () => {
@@ -10,18 +12,18 @@ const Navbar_2 = () => {
 
   return (
     <div className={`navbar-2 ${menuOpen ? "open" : ""}`}>
-      {/* Circular Menu Button */}
+      {/* Animated Hamburger Menu Button */}
       <div className="nav2-menu-button" onClick={toggleMenu}>
-        <span className="menu-icon">{menuOpen ? "✕" : "+"}</span>
+        <UseAnimations
+          animation={menu}
+          size={40}
+          strokeColor="black"
+          reverse={menuOpen} // Reverse animation when menu is open
+        />
       </div>
 
       {/* Slide-Up Full-Screen Navigation */}
       <div className="menu-overlay">
-        {/* Close Button */}
-        {/* <div className="close-button" onClick={toggleMenu}>
-          ✕
-        </div> */}
-
         <ul className="menu-items">
           <li>
             <span className="nav-number">01</span>
