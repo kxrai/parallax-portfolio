@@ -10,47 +10,50 @@ const Experience = () => {
 
   const workExperience = [
     {
-      title: "Frontend Developer",
-      company: "TechCorp Solutions",
-      dates: "Jan 2022 - Present",
-      description: [
-        "Developed and maintained responsive web applications using React.",
-        "Collaborated with designers to create seamless user experiences.",
-        "Optimized website performance, achieving a 20% improvement in load times.",
-      ],
-      logo: "/experience_images/techcorp_logo.png",
+      title: "Student Web Developer",
+      company: "Ontario Power Generation",
+      dates: "September 2023 - Present",
+      logo: "/experience_images/opg_logo.png", // Replace with the actual path
     },
     {
-      title: "Junior Web Developer",
-      company: "Innovatech",
-      dates: "Jun 2020 - Dec 2021",
-      description: [
-        "Implemented interactive features using JavaScript and CSS.",
-        "Participated in code reviews and team planning sessions.",
-        "Worked on cross-browser compatibility issues.",
-      ],
-      logo: "/experience_images/innovatech_logo.png",
+      title: "Lifeguard",
+      company: "Cornell Community Centre",
+      dates: "January 2023 - June 2023",
+      logo: "/experience_images/cornell_logo.png", // Replace with the actual path
+    },
+    {
+      title: "Administration",
+      company: "Pro Music",
+      dates: "July 2022 - February 2023",
+      logo: "/experience_images/promusic_logo.png", // Replace with the actual path
+    },
+    {
+      title: "Swimming Instructor",
+      company: "Olympian Swimming",
+      dates: "May 2019 - September 2019",
+      logo: "/experience_images/olympian_logo.png", // Replace with the actual path
     },
   ];
 
-  const education = [
-    {
-      institution: "State University",
-      degree: "Bachelor of Science in Computer Science",
-      dates: "2016 - 2020",
-      logo: "/experience_images/university_logo.png",
-    },
-  ];
+  const education = {
+    institution: "York University",
+    degree: "Digital Technologies (BASc)",
+    dates: "September 2023 - Present",
+    logo: "/experience_images/york_logo.png", // Replace with the actual path
+  };
 
   const skills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "React",
-    "Node.js",
-    "Git",
-    "UI/UX Design",
-    "Problem Solving",
+    "Python (Pygame, Tkinter)",
+    "Java (JavaFX)",
+    "Version Control (Git)",
+    "Visual Studio Code",
+    "Microsoft 365",
+    "Google Workspace",
+    "Adobe Photoshop",
+    "Premiere Pro",
+    "After Effects",
+    "Lightroom",
+    "Vegas Pro",
   ];
 
   return (
@@ -59,6 +62,7 @@ const Experience = () => {
       <h1 className="experience-title">Experience</h1>
 
       <section className="work-experience">
+        <h2>Job Experience</h2>
         <div className="experience-cards">
           {workExperience.map((job, index) => (
             <div key={index} className="experience-card">
@@ -67,16 +71,9 @@ const Experience = () => {
                 alt={`${job.company} logo`}
                 className="experience-logo"
               />
-              <div className="experience-details">
-                <h3>{job.title}</h3>
-                <h4>{job.company}</h4>
-                <p className="experience-dates">{job.dates}</p>
-                <ul>
-                  {job.description.map((point, idx) => (
-                    <li key={idx}>{point}</li>
-                  ))}
-                </ul>
-              </div>
+              <h3 className="experience-title-bold">{job.title}</h3>
+              <h4>{job.company}</h4>
+              <p className="experience-dates">{job.dates}</p>
             </div>
           ))}
         </div>
@@ -84,21 +81,15 @@ const Experience = () => {
 
       <section className="education">
         <h2>Education</h2>
-        <div className="education-cards">
-          {education.map((edu, index) => (
-            <div key={index} className="education-card">
-              <img
-                src={edu.logo}
-                alt={`${edu.institution} logo`}
-                className="education-logo"
-              />
-              <div className="education-details">
-                <h3>{edu.institution}</h3>
-                <p>{edu.degree}</p>
-                <p className="education-dates">{edu.dates}</p>
-              </div>
-            </div>
-          ))}
+        <div className="education-card">
+          <img
+            src={education.logo}
+            alt={`${education.institution} logo`}
+            className="education-logo"
+          />
+          <h3 className="experience-title-bold">{education.institution}</h3>
+          <p>{education.degree}</p>
+          <p className="education-dates">{education.dates}</p>
         </div>
       </section>
 
@@ -112,6 +103,16 @@ const Experience = () => {
           ))}
         </div>
       </section>
+
+      <div className="resume-download">
+        <a
+          href="/resume/Alicia_Loi_Resume.pdf"
+          download="Alicia_Loi_Resume.pdf"
+          className="resume-button"
+        >
+          Download My Resume
+        </a>
+      </div>
     </div>
   );
 };

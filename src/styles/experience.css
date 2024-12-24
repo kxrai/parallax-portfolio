@@ -1,92 +1,110 @@
 .experience-page {
-    background-color: #ffffff;
-    background-image: 
-      repeating-linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.1) 0px,
-        rgba(0, 0, 0, 0.1) 1px,
-        transparent 1px,
-        transparent 100px
-      ),
-      repeating-linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.1) 0px,
-        rgba(0, 0, 0, 0.1) 1px,
-        transparent 1px,
-        transparent 100px
-      );
-    font-family: "Poppins", sans-serif;
-    padding: 20px;
-    min-height: 100vh;
-  }
-  
-  .experience-title {
-    font-family: 'ICA Rubrik';
-    font-size: 5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #26283c;
-  }
-  
-  .work-experience, .education, .skills {
-    margin: 2rem 0;
-  }
-  
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .experience-cards, .education-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .experience-card, .education-card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    flex: 1;
-    min-width: 280px;
-    max-width: 350px;
-    text-align: center;
-  }
-  
-  .experience-logo, .education-logo {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-    object-fit: contain;
-  }
-  
-  .experience-details ul {
-    text-align: left;
-    margin: 10px 0 0 0;
-    padding: 0;
-    list-style: disc inside;
-  }
-  
-  .experience-dates, .education-dates {
-    font-size: 0.9rem;
-    color: #555;
-    margin: 10px 0;
-  }
-  
-  .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  }
-  
-  .skill-item {
-    background-color: #f3f3f3;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    color: #333;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
+  background-color: #ffffff;
+  background-image: 
+    repeating-linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.1) 0px,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 1px,
+      transparent 100px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1) 0px,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 1px,
+      transparent 100px
+    );
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.experience-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1b1f3b;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #333;
+}
+
+.experience-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.education-card {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.experience-card, .education-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  width: 300px;
+}
+
+.experience-logo, .education-logo {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+.experience-title-bold {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1b1f3b;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.skill-item {
+  background-color: #f3f3f3;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.resume-download {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.resume-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.resume-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
