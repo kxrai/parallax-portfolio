@@ -29,103 +29,124 @@
   scroll-behavior: smooth; /* Smooth scrolling */
 }
 
-
 body.projects-page {
   overflow-y: auto;
 }
 
-  .projects-title {
-    font-family: 'ICA Rubrik';
-    font-size: 5rem;
-    line-height: 1;
-    white-space: nowrap;
-    margin: 0;
-    padding: 2rem 0;
-    text-align: center;
-    color: #26283c;
-  }
-  
-  .projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding-bottom: 50px; /* Extra space for better mobile scrolling */
-  }
-  
-  .projects-card {
-    width: 300px;
-    background-color: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .projects-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .projects-card-header {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-  }
-  
-  .projects-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .projects-card-content {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .projects-card-title {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .projects-card-description {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 20px;
-  }
-  
-  .projects-card-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-  }
-  
-  .projects-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #b3e5fc; /* Light pastel blue */
-    border: none;
-    border-radius: 8px;
-    padding: 8px;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  
-  .projects-button .button-icon {
-    width: 24px;
-    height: 24px;
-  }
-  
-  .in-progress-badge {
-    display: inline-block;
-    background-color: #ffd54f; /* Example pastel yellow */
-    color: #333;
-    padding: 4px 8px;
-    border-radius: 12px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-top: 8px;
-  }
-  
+.projects-title {
+  font-family: 'ICA Rubrik';
+  font-size: 5rem;
+  line-height: 1;
+  white-space: nowrap;
+  margin: 0;
+  padding: 2rem 0;
+  text-align: center;
+  color: #26283c;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 50px; /* Extra space for better mobile scrolling */
+}
+
+.projects-card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.projects-card:hover {
+  transform: scale(1.05);
+}
+
+.projects-card-header {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.projects-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projects-card-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.projects-card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.projects-card-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.projects-card-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.projects-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #b3e5fc; /* Light pastel blue */
+  border: none;
+  border-radius: 8px;
+  width: 56px; /* Fixed width for consistency */
+  height: 56px; /* Fixed height for consistency */
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.projects-button:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+  background-color: #80d4fa; /* Slightly darker blue */
+}
+
+.projects-button .button-icon {
+  width: 24px; /* Adjust icon size */
+  height: 24px;
+}
+
+.projects-github-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #b3e5fc; /* Same blue as other buttons */
+  border-radius: 8px;
+  width: 56px; /* Fixed width for consistency */
+  height: 56px; /* Fixed height for consistency */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.projects-github-icon:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+  background-color: #80d4fa; /* Slightly darker blue */
+}
+
+.in-progress-badge {
+  display: inline-block;
+  background-color: #ffd54f; /* Example pastel yellow */
+  color: #333;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: 8px;
+}

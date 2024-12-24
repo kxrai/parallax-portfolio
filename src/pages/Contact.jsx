@@ -22,12 +22,14 @@ const Contact = () => {
             process.env.REACT_APP_EMAILJS_USER_ID
         )
         .then(
-            (result) => {
-            console.log("Email sent successfully!", result.text);
-            },
-            (error) => {
-            console.error("Error sending email:", error.text);
-            }
+        (result) => {
+            console.log("Email successfully sent!", result.text); // Log success
+            alert("Email sent successfully!"); // Optional feedback
+        },
+        (error) => {
+            console.error("Failed to send email:", error.text); // Log error
+            alert("Failed to send email. Please try again."); // Optional feedback
+        }
         );
     };
 
